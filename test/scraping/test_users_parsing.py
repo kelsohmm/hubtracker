@@ -60,3 +60,9 @@ class UsersParsingTest(TestCase):
 
         self.assertEqual(result['users'], {USER1})
         self.assertEqual(result['projects'], {ProjectKey(PROJECT1.id, PROJECT2.name)})
+
+    def test_real_api_json_data(self):
+        result = parse_users_json(self.read_api_data('users_real.json'))
+
+        self.assertEqual(result['users'], {USER1, USER2, USER3})
+        self.assertEqual(result['projects'], {PROJECT1, PROJECT2, PROJECT3})
