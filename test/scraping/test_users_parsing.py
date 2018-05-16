@@ -36,3 +36,15 @@ class UsersParsingTest(TestCase):
 
         self.assertEqual(result['users'], {USER1})
         self.assertEqual(result['projects'], {PROJECT1, PROJECT2, PROJECT3})
+
+    def test_should_not_duplicate_project_keys(self):
+        result = parse_users_json(self.read_api_data('users_two_matching_projects.json'))
+
+        self.assertEqual(result['users'], {USER1, USER2})
+        self.assertEqual(result['projects'], {PROJECT1, PROJECT2})
+
+    def test_should_read_project_keys_for_many_users(self):
+        result = parse_users_json(self.read_api_data('users_two_different_projects.json'))
+
+        self.assertEqual(result['users'], {USER1, USER2})
+        self.assertEqual(result['projects'], {PROJECT2, PROJECT3})

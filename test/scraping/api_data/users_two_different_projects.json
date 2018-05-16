@@ -5,23 +5,15 @@
       "name": "NAME A",
       "projects": [
         {
-          "id": 434418,
-          "name": "PROJECT1"
-        },
-        {
           "id": 434419,
           "name": "PROJECT2"
         }
       ]
     },
     {
-      "id": 311717,
+      "id": 196435,
       "name": "NAME B",
       "projects": [
-        {
-          "id": 434418,
-          "name": "PROJECT1"
-        },
         {
           "id": 434420,
           "name": "PROJECT3"
