@@ -22,4 +22,11 @@ class ReportsParsingTest(TestCase):
     def test_should_parse_empty_list(self):
         result = parse_reports_json(self.read_api_data('report_empty.json'))
 
-        self.assertEqual(result, {})
+        self.assertEqual(result, [])
+
+    def test_should_parse_duration_for_one_project_one_user(self):
+        result = parse_reports_json(self.read_api_data('report_one_user_one_project.json'))
+
+        self.assertEqual(result, [
+            (PROJECT1, USER1, 10)
+        ])
