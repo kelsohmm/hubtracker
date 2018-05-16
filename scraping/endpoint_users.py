@@ -11,10 +11,12 @@ def parse_users_json(json_string):
     }
 
 def read_users_keys(data):
-    users = set()
+    users = dict()
     for user in data['users']:
-        users.add(UserKey(user['id'], user['name']))
-    return users
+        users[user['id']] = user['name']
+    return {
+        UserKey(id, name) for id, name in users.items()
+    }
 
 def read_project_keys(data):
     projects = set()
