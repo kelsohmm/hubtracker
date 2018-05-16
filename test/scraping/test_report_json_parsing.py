@@ -30,3 +30,30 @@ class ReportsParsingTest(TestCase):
         self.assertEqual(result, [
             (PROJECT1, USER1, 10)
         ])
+
+    def test_should_parse_duration_for_one_user_two_projects(self):
+        result = parse_reports_json(self.read_api_data('report_one_user_two_projects.json'))
+
+        self.assertEqual(result, [
+            (PROJECT1, USER1, 10),
+            (PROJECT2, USER1, 10)
+        ])
+
+    def test_should_parse_duration_for_two_users_one_project(self):
+        result = parse_reports_json(self.read_api_data('report_two_users_one_project.json'))
+
+        self.assertEqual(result, [
+            (PROJECT1, USER1, 5),
+            (PROJECT1, USER2, 5)
+        ])
+
+    def test_should_parse_duration_for_three_users_three_projects(self):
+        result = parse_reports_json(self.read_api_data('report_three_users_three_projects.json'))
+
+        self.assertEqual(result, [
+            (PROJECT1, USER1, 5),
+            (PROJECT1, USER2, 5),
+            (PROJECT2, USER1, 10),
+            (PROJECT3, USER2, 3),
+            (PROJECT3, USER3, 7),
+        ])
