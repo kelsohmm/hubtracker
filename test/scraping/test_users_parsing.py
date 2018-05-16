@@ -2,6 +2,11 @@ import os
 from unittest import TestCase
 
 from scraping.endpoint_users import parse_users_json
+from scraping.types import UserKey
+
+USER1 = UserKey(311716, "NAME A")
+USER2 = UserKey(196435, "NAME B")
+USER3 = UserKey(202111, "NAME C")
 
 
 class UsersParsingTest(TestCase):
@@ -14,5 +19,11 @@ class UsersParsingTest(TestCase):
     def test_should_return_empty_keys_when_users_empty(self):
         result = parse_users_json(self.read_api_data('users_empty.json'))
 
-        self.assertFalse(result['users'])
-        self.assertFalse(result['projects'])
+        self.assertEqual(result['users'], set())
+        self.assertEqual(result['projects'], set())
+
+    def test_should_return_user_key_for_single_user_without_project(self):
+        result = parse_users_json(self.read_api_data('users_one_no_projects.json'))
+
+        self.assertEqual(result['users'], {USER1})
+        self.assertEqual(result['projects'], set())
