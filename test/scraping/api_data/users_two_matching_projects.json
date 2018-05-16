@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": 311716,
+      "name": "NAME A",
+      "projects": [
+        {
+          "id": 434418,
+          "name": "hubstaff bot36"
+        },
+        {
+          "id": 434419,
+          "name": "Project A"
+        }
+      ]
+    },
+    {
+      "id": 311717,
+      "name": "NAME B",
+      "projects": [
+        {
+          "id": 434418,
+          "name": "hubstaff bot36"
+        },
+        {
+          "id": 434419,
+          "name": "Project A"
+        }
+      ]
+    }
+  ]
+}

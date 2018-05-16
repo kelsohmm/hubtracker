@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 311716,
+      "name": "NAME A",
+      "last_activity": "2018-05-16T18:20:00Z",
+      "email": "mail@mail.com",
+      "projects": [
+        {
+          "id": 434418,
+          "name": "hubstaff bot36"
+        },
+        {
+          "id": 434419,
+          "name": "Project A"
+        },
+        {
+          "id": 434420,
+          "name": "Project B"
+        }
+      ]
+    }
+  ]
+}

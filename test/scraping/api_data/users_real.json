@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "id": 311716,
+      "name": "NAME A",
+      "last_activity": "2018-05-16T18:20:00Z",
+      "email": "mail@mail.com",
+      "projects": [
+        {
+          "id": 434418,
+          "name": "hubstaff bot36",
+          "last_activity": "2018-05-16T18:20:00Z",
+          "status": "Active"
+        },
+        {
+          "id": 434419,
+          "name": "Project A",
+          "last_activity": null,
+          "status": "Active"
+        },
+        {
+          "id": 434420,
+          "name": "Project B",
+          "last_activity": null,
+          "status": "Active"
+        }
+      ]
+    },
+    {
+      "id": 196435,
+      "name": "NAME B",
+      "last_activity": "2018-05-16T03:44:57Z",
+      "email": "mail@mail.com",
+      "projects": [
+        {
+          "id": 434418,
+          "name": "hubstaff bot36",
+          "last_activity": "2018-05-16T18:20:00Z",
+          "status": "Active"
+        },
+        {
+          "id": 434419,
+          "name": "Project A",
+          "last_activity": null,
+          "status": "Active"
+        },
+        {
+          "id": 434420,
+          "name": "Project B",
+          "last_activity": null,
+          "status": "Active"
+        }
+      ]
+    },
+    {
+      "id": 202111,
+      "name": "NAME C",
+      "last_activity": "2018-05-15T18:59:37Z",
+      "email": "mail@mail.com",
+      "projects": [
+        {
+          "id": 434418,
+          "name": "hubstaff bot36",
+          "last_activity": "2018-05-16T18:20:00Z",
+          "status": "Active"
+        },
+        {
+          "id": 434419,
+          "name": "Project A",
+          "last_activity": null,
+          "status": "Active"
+        },
+        {
+          "id": 434420,
+          "name": "Project B",
+          "last_activity": null,
+          "status": "Active"
+        }
+      ]
+    }
+  ]
+}
