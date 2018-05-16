@@ -7,9 +7,9 @@ from scraping.types import UserKey, ProjectKey
 USER1 = UserKey(311716, "NAME A")
 USER2 = UserKey(196435, "NAME B")
 USER3 = UserKey(202111, "NAME C")
-PROJECT1 = ProjectKey(434418, "hubstaff bot36")
-PROJECT2 = ProjectKey(434419, "Project A")
-PROJECT3 = ProjectKey(434420, "Project B")
+PROJECT1 = ProjectKey(434418, "PROJECT1")
+PROJECT2 = ProjectKey(434419, "PROJECT2")
+PROJECT3 = ProjectKey(434420, "PROJECT3")
 
 
 class UsersParsingTest(TestCase):
