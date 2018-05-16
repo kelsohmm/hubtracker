@@ -1,0 +1,34 @@
+{
+  "organizations": [
+    {
+      "id": 99844,
+      "name": "ORG",
+      "duration": 10,
+      "projects": [
+        {
+          "id": 434418,
+          "name": "PROJECT1",
+          "duration": 10,
+          "dates": [
+            {
+              "date": "2018-05-16",
+              "duration": 10,
+              "users": [
+                {
+                  "id": 311716,
+                  "name": "USER1",
+                  "duration": 5
+                },
+                {
+                  "id": 311717,
+                  "name": "USER2",
+                  "duration": 5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

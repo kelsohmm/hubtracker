@@ -1,0 +1,47 @@
+{
+  "organizations": [
+    {
+      "id": 99844,
+      "name": "ORG",
+      "duration": 20,
+      "projects": [
+        {
+          "id": 434418,
+          "name": "PROJECT1",
+          "duration": 10,
+          "dates": [
+            {
+              "date": "2018-05-16",
+              "duration": 10,
+              "users": [
+                {
+                  "id": 311716,
+                  "name": "USER1",
+                  "duration": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 434419,
+          "name": "PROJECT2",
+          "duration": 10,
+          "dates": [
+            {
+              "date": "2018-05-16",
+              "duration": 10,
+              "users": [
+                {
+                  "id": 311716,
+                  "name": "USER1",
+                  "duration": 10
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
