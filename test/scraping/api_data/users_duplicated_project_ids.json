@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": 311716,
+      "name": "NAME A",
+      "projects": [
+        {
+          "id": 434418,
+          "name": "PROJECT1"
+        },
+        {
+          "id": 434418,
+          "name": "PROJECT2"
+        }
+      ]
+    }
+  ]
+}

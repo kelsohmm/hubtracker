@@ -19,8 +19,10 @@ def read_users_keys(data):
     }
 
 def read_project_keys(data):
-    projects = set()
+    projects = dict()
     for user in data['users']:
         for project in user['projects']:
-            projects.add(ProjectKey(project['id'], project['name']))
-    return projects
+            projects[project['id']] = project['name']
+    return {
+        ProjectKey(id, name) for id, name in projects.items()
+    }

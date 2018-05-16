@@ -50,7 +50,13 @@ class UsersParsingTest(TestCase):
         self.assertEqual(result['projects'], {PROJECT2, PROJECT3})
 
     def test_should_overwrite_user_name_when_user_id_duplicated(self):
-        result = parse_users_json(self.read_api_data('users_two_duplicated_id.json'))
+        result = parse_users_json(self.read_api_data('users_duplicated_user_ids.json'))
 
         self.assertEqual(result['users'], {UserKey(USER1.id, USER2.name)})
         self.assertEqual(result['projects'], set())
+
+    def test_should_overwrite_project_name_when_project_id_duplicated(self):
+        result = parse_users_json(self.read_api_data('users_duplicated_project_ids.json'))
+
+        self.assertEqual(result['users'], {USER1})
+        self.assertEqual(result['projects'], {ProjectKey(PROJECT1.id, PROJECT2.name)})
