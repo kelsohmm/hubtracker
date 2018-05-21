@@ -43,3 +43,22 @@ class ReportsParsingTest(TestCase):
                 [PROJECT2_NAME , TIME_10SEC_STR],
             ]))
 
+    def test_should_build_2_cols_for_2_users(self):
+        self._run_test_for(ActivityTableTestData(
+            input=[
+                ReportEntry(PROJECT1, USER1, TIME_10SEC_INT),
+                ReportEntry(PROJECT1, USER2, TIME_10SEC_INT),
+            ],output=[
+                [EMPTY         , USER1_NAME     , USER2_NAME] ,
+                [PROJECT1_NAME , TIME_10SEC_STR , TIME_10SEC_STR],
+            ]))
+
+    def test_should_sort_by_user_id(self):
+        self._run_test_for(ActivityTableTestData(
+            input=[
+                ReportEntry(PROJECT1, USER2, TIME_10SEC_INT),
+                ReportEntry(PROJECT1, USER1, TIME_10SEC_INT),
+            ],output=[
+                [EMPTY         , USER1_NAME     , USER2_NAME] ,
+                [PROJECT1_NAME , TIME_10SEC_STR , TIME_10SEC_STR],
+            ]))
