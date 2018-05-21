@@ -15,7 +15,9 @@ def get_report_entries_from_json(report_json):
     return result
 
 def _get_projects(report):
-    return report['organizations'][0]['projects']
+    return report['organizations'][0]['projects'] \
+            if len(report['organizations']) > 0 \
+            else []
 
 def _get_project_users(project):
     return project['dates'][0]['users']
