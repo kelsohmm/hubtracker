@@ -79,3 +79,16 @@ class ReportsParsingTest(TestCase):
                 [PROJECT3_NAME , TIME_HOUR_STR],
                 [PROJECT4_NAME , TIME_12HOUR_STR],
             ]))
+
+    def test_should_fill_all_cells_when_all_users_participated_in_all_projects(self):
+        self._run_test_for(ActivityTableTestData(
+            input=[
+                ReportEntry(PROJECT1, USER1, TIME_10SEC_INT),
+                ReportEntry(PROJECT2, USER1, TIME_10SEC_INT),
+                ReportEntry(PROJECT1, USER2, TIME_10SEC_INT),
+                ReportEntry(PROJECT2, USER2, TIME_10SEC_INT),
+            ],output=[
+                [EMPTY         , USER1_NAME     , USER2_NAME] ,
+                [PROJECT1_NAME , TIME_10SEC_STR , TIME_10SEC_STR],
+                [PROJECT2_NAME , TIME_10SEC_STR , TIME_10SEC_STR],
+            ]))
