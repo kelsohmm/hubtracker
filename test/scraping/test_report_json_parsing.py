@@ -3,6 +3,11 @@ from unittest import TestCase
 from scraping.endpoint_reports import parse_reports_json
 from test.scraping.data_common import *
 
+TIME_5SEC_INT = 5
+TIME_3SEC_INT = 3
+TIME_7SEC_INT = 7
+
+
 class ReportsParsingTest(TestCase):
     def read_api_data(self, filename):
         TESTDATA_PATH = os.path.join(os.path.dirname(__file__), 'api_data')
@@ -19,32 +24,32 @@ class ReportsParsingTest(TestCase):
         result = parse_reports_json(self.read_api_data('report_one_user_one_project.json'))
 
         self.assertEqual(result, [
-            (PROJECT1, USER1, 10)
+            (PROJECT1, USER1, TIME_10SEC_INT)
         ])
 
     def test_should_parse_duration_for_one_user_two_projects(self):
         result = parse_reports_json(self.read_api_data('report_one_user_two_projects.json'))
 
         self.assertEqual(result, [
-            (PROJECT1, USER1, 10),
-            (PROJECT2, USER1, 10)
+            (PROJECT1, USER1, TIME_10SEC_INT),
+            (PROJECT2, USER1, TIME_10SEC_INT)
         ])
 
     def test_should_parse_duration_for_two_users_one_project(self):
         result = parse_reports_json(self.read_api_data('report_two_users_one_project.json'))
 
         self.assertEqual(result, [
-            (PROJECT1, USER1, 5),
-            (PROJECT1, USER2, 5)
+            (PROJECT1, USER1, TIME_5SEC_INT),
+            (PROJECT1, USER2, TIME_5SEC_INT)
         ])
 
     def test_should_parse_duration_for_three_users_three_projects(self):
         result = parse_reports_json(self.read_api_data('report_three_users_three_projects.json'))
 
         self.assertEqual(result, [
-            (PROJECT1, USER1, 5),
-            (PROJECT1, USER2, 5),
-            (PROJECT2, USER1, 10),
-            (PROJECT3, USER2, 3),
-            (PROJECT3, USER3, 7),
+            (PROJECT1, USER1, TIME_5SEC_INT),
+            (PROJECT1, USER2, TIME_5SEC_INT),
+            (PROJECT2, USER1, TIME_10SEC_INT),
+            (PROJECT3, USER2, TIME_3SEC_INT),
+            (PROJECT3, USER3, TIME_7SEC_INT),
         ])
