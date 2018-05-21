@@ -8,10 +8,10 @@ ActivityTableTestData = namedtuple("ActivityTableTestData", ["input", "output"])
 
 SINGLE_ENTRY = ActivityTableTestData(
     input=[
-(PROJECT1, USER1, 10)
+(PROJECT1, USER1, TIME_10SEC_INT)
     ],output=[
 [EMPTY         , USER1_NAME] ,
-[PROJECT1_NAME , 10]
+[PROJECT1_NAME , TIME_10SEC_STR]
     ])
 
 class ReportsParsingTest(TestCase):
@@ -20,3 +20,4 @@ class ReportsParsingTest(TestCase):
 
     def test_should_build_2_dim_table_for_single_entry(self):
         self._run_test_for(SINGLE_ENTRY)
+

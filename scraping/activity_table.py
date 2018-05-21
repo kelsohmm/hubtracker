@@ -1,3 +1,4 @@
+from datetime import timedelta
 
 
 def build_activity_table(report_entries, empty_token=" "):
@@ -5,7 +6,8 @@ def build_activity_table(report_entries, empty_token=" "):
 
     return [
         [empty_token, user.name],
-        [project.name, duration]
+        [project.name, to_time_string(duration)]
     ]
 
-
+def to_time_string(duration):
+    return str(timedelta(seconds=duration))
