@@ -11,7 +11,7 @@ def get_project_users(project):
     return project['dates'][0]['users']
 
 
-def parse_reports_json(report_json):
+def get_report_entries_from_json(report_json):
     result = []
     for project in get_projects(json.loads(report_json)):
         project_key = ProjectKey(project['id'], project['name'])

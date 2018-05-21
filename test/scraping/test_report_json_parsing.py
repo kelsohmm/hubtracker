@@ -1,6 +1,6 @@
 import os
 from unittest import TestCase
-from scraping.endpoint_reports import parse_reports_json
+from scraping.activity_report import get_report_entries_from_json
 from scraping.types import ReportEntry
 from test.scraping.data_common import *
 
@@ -17,19 +17,19 @@ class ReportsParsingTest(TestCase):
             return json_file.read()
 
     def test_should_parse_empty_list(self):
-        result = parse_reports_json(self.read_api_data('report_empty.json'))
+        result = get_report_entries_from_json(self.read_api_data('report_empty.json'))
 
         self.assertEqual(result, [])
 
     def test_should_parse_duration_for_one_project_one_user(self):
-        result = parse_reports_json(self.read_api_data('report_one_user_one_project.json'))
+        result = get_report_entries_from_json(self.read_api_data('report_one_user_one_project.json'))
 
         self.assertEqual(result, [
             ReportEntry(PROJECT1, USER1, TIME_10SEC_INT)
         ])
 
     def test_should_parse_duration_for_one_user_two_projects(self):
-        result = parse_reports_json(self.read_api_data('report_one_user_two_projects.json'))
+        result = get_report_entries_from_json(self.read_api_data('report_one_user_two_projects.json'))
 
         self.assertEqual(result, [
             ReportEntry(PROJECT1, USER1, TIME_10SEC_INT),
@@ -37,7 +37,7 @@ class ReportsParsingTest(TestCase):
         ])
 
     def test_should_parse_duration_for_two_users_one_project(self):
-        result = parse_reports_json(self.read_api_data('report_two_users_one_project.json'))
+        result = get_report_entries_from_json(self.read_api_data('report_two_users_one_project.json'))
 
         self.assertEqual(result, [
             ReportEntry(PROJECT1, USER1, TIME_5SEC_INT),
@@ -45,7 +45,7 @@ class ReportsParsingTest(TestCase):
         ])
 
     def test_should_parse_duration_for_three_users_three_projects(self):
-        result = parse_reports_json(self.read_api_data('report_three_users_three_projects.json'))
+        result = get_report_entries_from_json(self.read_api_data('report_three_users_three_projects.json'))
 
         self.assertEqual(result, [
             ReportEntry(PROJECT1, USER1, TIME_5SEC_INT),
