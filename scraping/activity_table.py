@@ -1,7 +1,12 @@
 from datetime import timedelta
 
+class EmptyReportError(ValueError):
+    pass
 
 def build_activity_table(report_entries, empty_token=" "):
+    if len(report_entries) == 0:
+        raise EmptyReportError()
+
     projects_indexes, users_indexes = _decide_table_header_indexes(report_entries)
     table = _build_zero_filled(empty_token, projects_indexes, users_indexes)
     _fill_cell_values(table, report_entries, projects_indexes, users_indexes)
