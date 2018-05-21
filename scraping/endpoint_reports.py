@@ -1,6 +1,6 @@
 import json
 
-from scraping.types import UserKey, ProjectKey
+from scraping.types import UserKey, ProjectKey, ReportEntry
 
 
 def get_projects(report):
@@ -18,6 +18,6 @@ def parse_reports_json(report_json):
 
         for user in get_project_users(project):
             user_key = UserKey(user['id'], user['name'])
-            result.append((project_key, user_key, user['duration']))
+            result.append(ReportEntry(project_key, user_key, user['duration']))
 
     return result

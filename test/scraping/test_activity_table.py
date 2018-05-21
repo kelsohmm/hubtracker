@@ -1,5 +1,7 @@
 from collections import namedtuple
 from unittest import TestCase
+
+from scraping.types import ReportEntry
 from test.scraping.data_common import *
 from scraping.activity_table import build_activity_table
 
@@ -8,7 +10,7 @@ ActivityTableTestData = namedtuple("ActivityTableTestData", ["input", "output"])
 
 SINGLE_ENTRY = ActivityTableTestData(
     input=[
-(PROJECT1, USER1, TIME_10SEC_INT)
+ReportEntry(PROJECT1, USER1, TIME_10SEC_INT)
     ],output=[
 [EMPTY         , USER1_NAME] ,
 [PROJECT1_NAME , TIME_10SEC_STR]
