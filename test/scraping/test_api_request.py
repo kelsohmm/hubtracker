@@ -8,12 +8,10 @@ from scraping.api_request import build_activity_report_query
 class TEST_CONFIG:
     APP_TOKEN="XYZ"
     USER_TOKEN="ZYX"
-    ORGANIZATION_ID=111
 
 TEST_CONFIG_HEADERS = {
-    "Auth-Token": "XYZ",
-    "App-Token": "ZYX",
-    "organizations": [111],
+    "Auth-Token": "ZYX",
+    "App-Token": "XYZ",
 }
 
 def now_mock():

@@ -4,7 +4,6 @@ from config import API_CONFIG
 _ENDPOINT_TEMPLATE = "https://api.hubstaff.com/v1/custom/by_date/team?start_date={0}&end_date={0}"
 _USER_TOKEN_HEADER = "Auth-Token"
 _APP_TOKEN_HEADER = "App-Token"
-_ORGANIZATION_HEADER = "organizations"
 _DATE_FORMAT = '%Y-%m-%d'
 
 
@@ -28,7 +27,6 @@ def _is_valid_date_format(requested_date):
 
 def _build_headers(config):
     return {
-        _USER_TOKEN_HEADER: config.APP_TOKEN,
-        _APP_TOKEN_HEADER: config.USER_TOKEN,
-        _ORGANIZATION_HEADER: [config.ORGANIZATION_ID],
+        _USER_TOKEN_HEADER: str(config.USER_TOKEN),
+        _APP_TOKEN_HEADER: str(config.APP_TOKEN),
     }
