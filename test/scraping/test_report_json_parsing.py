@@ -1,16 +1,7 @@
 import os
 from unittest import TestCase
-
 from scraping.endpoint_reports import parse_reports_json
-from scraping.types import UserKey, ProjectKey
-
-USER1 = UserKey(311716, "USER1")
-USER2 = UserKey(311717, "USER2")
-USER3 = UserKey(311718, "USER3")
-PROJECT1 = ProjectKey(434418, "PROJECT1")
-PROJECT2 = ProjectKey(434419, "PROJECT2")
-PROJECT3 = ProjectKey(434420, "PROJECT3")
-
+from test.scraping.data_common import *
 
 class ReportsParsingTest(TestCase):
     def read_api_data(self, filename):
