@@ -62,3 +62,20 @@ class ReportsParsingTest(TestCase):
                 [EMPTY         , USER1_NAME     , USER2_NAME] ,
                 [PROJECT1_NAME , TIME_10SEC_STR , TIME_10SEC_STR],
             ]))
+
+    def test_should_translate_duration_to_human_friendly_string(self):
+        PROJECT4_NAME = "PROJECT4"
+        PROJECT4 = ProjectKey(434421, PROJECT4_NAME)
+        self._run_test_for(ActivityTableTestData(
+            input=[
+                ReportEntry(PROJECT1, USER1, TIME_10SEC_INT),
+                ReportEntry(PROJECT2, USER1, TIME_66SEC_INT),
+                ReportEntry(PROJECT3, USER1, TIME_HOUR_INT),
+                ReportEntry(PROJECT4, USER1, TIME_12HOUR_INT),
+            ],output=[
+                [EMPTY         , USER1_NAME] ,
+                [PROJECT1_NAME , TIME_10SEC_STR],
+                [PROJECT2_NAME , TIME_66SEC_STR],
+                [PROJECT3_NAME , TIME_HOUR_STR],
+                [PROJECT4_NAME , TIME_12HOUR_STR],
+            ]))
