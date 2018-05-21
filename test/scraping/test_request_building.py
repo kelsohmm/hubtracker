@@ -25,14 +25,14 @@ class ApiRequestBuildingTest(TestCase):
         self.assertEqual(endpoint, "https://api.hubstaff.com/v1/custom/by_date/team?start_date=2018-01-03&end_date=2018-01-03")
         self.assertEqual(headers, TEST_CONFIG_HEADERS)
 
-    def test_should_use_yesterday_date_when_date_empty(self):
-        endpoint, headers = build_activity_report_query(config=TEST_CONFIG, now_func=now_mock)
+    def test_should_use_yesterday_date_when_date_none(self):
+        endpoint, headers = build_activity_report_query(None, config=TEST_CONFIG, now_func=now_mock)
 
         self.assertEqual(endpoint, "https://api.hubstaff.com/v1/custom/by_date/team?start_date=2018-01-01&end_date=2018-01-01")
         self.assertEqual(headers, TEST_CONFIG_HEADERS)
 
     def test_should_use_yesterday_date_when_date_incorrect(self):
-        endpoint, headers = build_activity_report_query('SOME_STRING',config=TEST_CONFIG, now_func=now_mock)
+        endpoint, headers = build_activity_report_query('2018-02-30',config=TEST_CONFIG, now_func=now_mock)
 
         self.assertEqual(endpoint, "https://api.hubstaff.com/v1/custom/by_date/team?start_date=2018-01-01&end_date=2018-01-01")
         self.assertEqual(headers, TEST_CONFIG_HEADERS)

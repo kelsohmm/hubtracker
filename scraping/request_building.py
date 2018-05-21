@@ -7,7 +7,7 @@ _APP_TOKEN_HEADER = "App-Token"
 _DATE_FORMAT = '%Y-%m-%d'
 
 
-def build_activity_report_query(requested_date=None, config=API_CONFIG, now_func=datetime.now):
+def build_activity_report_query(requested_date, config=API_CONFIG, now_func=datetime.now):
     if not _is_valid_date_format(requested_date):
         requested_date=_get_yesterday_date(now_func)
 
