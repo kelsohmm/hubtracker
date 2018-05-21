@@ -92,3 +92,15 @@ class ReportsParsingTest(TestCase):
                 [PROJECT1_NAME , TIME_10SEC_STR , TIME_10SEC_STR],
                 [PROJECT2_NAME , TIME_10SEC_STR , TIME_10SEC_STR],
             ]))
+
+    def test_should_fill_with_duration_0_when_user_doesnt_have_duration_in_project(self):
+        self._run_test_for(ActivityTableTestData(
+            input=[
+                ReportEntry(PROJECT1, USER1, TIME_10SEC_INT),
+                ReportEntry(PROJECT2, USER1, TIME_10SEC_INT),
+                ReportEntry(PROJECT1, USER2, TIME_10SEC_INT),
+            ],output=[
+                [EMPTY         , USER1_NAME     , USER2_NAME] ,
+                [PROJECT1_NAME , TIME_10SEC_STR , TIME_10SEC_STR],
+                [PROJECT2_NAME , TIME_10SEC_STR , TIME_NO_DURATION_STR],
+            ]))
