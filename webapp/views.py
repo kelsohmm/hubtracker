@@ -1,6 +1,6 @@
 import requests
 from django.shortcuts import render
-from scraping.api_request import build_activity_report_query
+from scraping.request_building import build_activity_report_query
 
 
 def index(request):

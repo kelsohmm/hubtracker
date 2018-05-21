@@ -2,7 +2,7 @@ from unittest import TestCase
 
 from datetime import datetime
 
-from scraping.api_request import build_activity_report_query
+from scraping.request_building import build_activity_report_query
 
 
 class TEST_CONFIG:
