@@ -1,13 +1,14 @@
-import requests
 from django.shortcuts import render
-from scraping.request_building import build_activity_report_query
+
+from scraping.api_request import request_activity_table
 
 
-def index(request):
-    url, headers = build_activity_report_query('2018-05-16')
-    resp = requests.get(url, headers=headers)
+def index_view(request):
+    return date_view(request, '2018-05-16')
+
+def date_view(request, date):
     return render(
         request,
         'index.html',
-        context={'table': str(resp.text)}
+        context={'table': str(request_activity_table(date))}
     )
