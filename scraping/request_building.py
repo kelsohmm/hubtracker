@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from config import API_CONFIG
 
-_ENDPOINT_TEMPLATE = "https://api.hubstaff.com/v1/custom/by_date/team?start_date={0}&end_date={0}"
+_ENDPOINT_TEMPLATE = "https://api.hubstaff.com/v1/custom/by_project/team?start_date={0}&end_date={0}"
 _USER_TOKEN_HEADER = "Auth-Token"
 _APP_TOKEN_HEADER = "App-Token"
 _DATE_FORMAT = '%Y-%m-%d'
