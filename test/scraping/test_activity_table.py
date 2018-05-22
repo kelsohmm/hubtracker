@@ -12,9 +12,9 @@ class ReportsParsingTest(TestCase):
     def _run_test_for(self, test_data):
         self.assertEqual(test_data.output, build_activity_table(test_data.input, empty_token=EMPTY))
 
-    def test_should_raise_empty_report_error_when_empty_report_entries(self):
-        with self.assertRaises(EmptyReportError):
-            build_activity_table([])
+    def test_should_return_empty_list_when_report_empty(self):
+        self._run_test_for(ActivityTableTestData(
+            input=[],output=[]))
 
     def test_should_build_2_dim_table_for_single_entry(self):
         self._run_test_for(ActivityTableTestData(

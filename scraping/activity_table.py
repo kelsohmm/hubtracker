@@ -5,7 +5,7 @@ class EmptyReportError(ValueError):
 
 def build_activity_table(report_entries, empty_token=" "):
     if len(report_entries) == 0:
-        raise EmptyReportError()
+        return []
 
     projects_indexes, users_indexes = _decide_table_header_indexes(report_entries)
     table = _build_zero_filled(empty_token, projects_indexes, users_indexes)
