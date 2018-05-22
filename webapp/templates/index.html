@@ -1,9 +1,31 @@
-<table>
-    {% for row in table %}
-        <tr>
-            {% for cell in row %}
+<!doctype html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Hubstaff activity report</title>
+    <meta name="description" content="Hubstaff activity report">
+    <meta name="author" content="Bogusz">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="{% static 'webapp/style.css' %}">
+</head>
+
+<body>
+    <main>
+        <h1>Hubstaff activity report</h1>
+        <table>
+            {% for row in table %}
+            <tr>
+                {% for cell in row %}
                 <td>{{cell}}</td>
+                {% endfor %}
+            </tr>
             {% endfor %}
-        </tr>
-    {% endfor %}
-</table>
+        </table>
+    </main>
+</body>
+</html>

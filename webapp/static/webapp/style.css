@@ -1,0 +1,33 @@
+body, html {
+    background: white;
+    margin: 0;
+    padding: 0;
+}
+* {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+main {
+    background: #f4faff;
+    width: 80%;
+    padding: 20px 1%;
+    margin: 0 9%;
+    border-radius: 25px;
+    min-height: 100%;
+}
+
+table {
+    background: #e8f4ff;
+    border-radius: 10px;
+}
+
+table td {
+    padding: 2px 6px;
+}
+
+table > tbody > tr > td:first-child {
+    background: #d4e6f7;
+}
+table > tbody > tr:first-child > td {
+    background: #d4e6f7;
+}
