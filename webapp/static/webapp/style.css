@@ -31,3 +31,8 @@ table > tbody > tr > td:first-child {
 table > tbody > tr:first-child > td {
     background: #d4e6f7;
 }
+
+span.error {
+    color: #ff7568;
+    font-width: bold;
+}

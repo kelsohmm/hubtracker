@@ -17,15 +17,20 @@
 <body>
     <main>
         <h1>Hubstaff activity report</h1>
-        <table>
-            {% for row in table %}
-            <tr>
-                {% for cell in row %}
-                <td>{{cell}}</td>
+
+        {% if table|length > 0 %}
+            <table>
+                {% for row in table %}
+                <tr>
+                    {% for cell in row %}
+                    <td>{{cell}}</td>
+                    {% endfor %}
+                </tr>
                 {% endfor %}
-            </tr>
-            {% endfor %}
-        </table>
+            </table>
+        {% else %}
+            <span class="error">No activity in this day :(</span>
+        {% endif %}
     </main>
 </body>
 </html>
