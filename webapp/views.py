@@ -3,7 +3,7 @@ from django.shortcuts import render
 from scraping.api_request import request_activity_table
 from webapp.dateutils import shift_date, is_date_valid
 
-_DATE_FORMAT = '%d-%m-%Y'
+_DATE_FORMAT = '%Y/%m/%d'
 
 def index_view(request):
     yesterday = shift_date(date.today(), days_to_shift=-1)

@@ -1,20 +1,23 @@
 {% extends "index.html" %}
 
 {% block content %}
-
+<div>
+    <a href="/{{prev_date}}"><< previous day</a>
+    <a href="/{{next_date}}">next day >></a>
+</div>
 {% if table|length > 0 %}
-<h3>Activity report for {{date}}:</h3>
-<table>
-    {% for row in table %}
-    <tr>
-        {% for cell in row %}
-        <td>{{cell}}</td>
+    <h3>Activity report for {{date}}:</h3>
+    <table>
+        {% for row in table %}
+        <tr>
+            {% for cell in row %}
+            <td>{{cell}}</td>
+            {% endfor %}
+        </tr>
         {% endfor %}
-    </tr>
-    {% endfor %}
-</table>
-{% else %}
-<span class="error">No activity on {{date}} :(</span>
-{% endif %}
+    </table>
+    {% else %}
+    <span class="error">No activity on {{date}} :(</span>
+    {% endif %}
 
 {% endblock %}
