@@ -19,6 +19,7 @@
         <h1>Hubstaff activity report</h1>
 
         {% if table|length > 0 %}
+            <h3>Activity report for {{date}}:</h3>
             <table>
                 {% for row in table %}
                 <tr>
@@ -29,7 +30,7 @@
                 {% endfor %}
             </table>
         {% else %}
-            <span class="error">No activity in this day :(</span>
+            <span class="error">No activity on {{date}} :(</span>
         {% endif %}
     </main>
 </body>

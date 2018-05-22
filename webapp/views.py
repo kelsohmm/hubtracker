@@ -13,5 +13,8 @@ def date_view(request, date):
     return render(
         request,
         'index.html',
-        context={'table': request_activity_table(date)}
+        context={
+            'table': request_activity_table(date),
+            'date': date
+         }
     )
