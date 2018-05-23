@@ -15,7 +15,7 @@ def date_view(request, year, month, day):
     else:
         return render(
             request,
-            'index.html',
+            'error.html',
             context={ 'error_msg': 'Invalid date, please select date in format YYYY/MM/DD.'})
 
 
